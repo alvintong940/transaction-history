@@ -3,25 +3,11 @@ import { Text, StyleSheet, TouchableOpacity, View, Alert, FlatList, SafeAreaView
 import Background from '../components/Background';
 import BackButton from '../components/BackButton';
 import { Navigation } from '../types';
+import { history } from '../mock/data';
 
 type Props = {
   navigation: Navigation;
 };
-
-const tasks =[
-  {amount:'120.00', date:'21/12/2023', description:"Own transfer", type:'debit'},
-  {amount:'520.00', date:'23/12/2023', description:"Own transfer", type:'credit'},
-  {amount:'10.00', date:'24/12/2023', description:"Grocerry", type:'debit'},
-  {amount:'20.00', date:'25/12/2023', description:"Own transfer", type:'credit'},
-  {amount:'120.00', date:'25/12/2023', description:"Petrol", type:'debit'},
-  {amount:'12.00', date:'25/12/2023', description:"Own transfer", type:'debit'},
-  {amount:'12.00', date:'27/12/2023', description:"Petrol", type:'debit'},
-  {amount:'120.00', date:'27/12/2023', description:"Own transfer", type:'credit'},
-  {amount:'20.00', date:'21/01/2024', description:"Own transfer", type:'credit'},
-  {amount:'20.00', date:'21/01/2024', description:"Own transfer", type:'credit'},
-  {amount:'120.00', date:'21/01/2024', description:"Grocery", type:'debit'},
-  {amount:'1020.00', date:'21/01/2024', description:"CC bill", type:'debit'},
-  {amount:'120.00', date:'21/01/2024', description:"Grocery", type:'debit'}];
 
 const TransactionListScreen = ({ navigation }: Props) => {
 
@@ -66,7 +52,7 @@ const TransactionListScreen = ({ navigation }: Props) => {
     <View style={[styles.container]}>    
       <FlatList
         style={styles.list}
-        data={tasks}
+        data={history}
         renderItem={listItem} />
     </View>
     </Background></>
